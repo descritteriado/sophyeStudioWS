@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration PUBLIC "-//log4j/log4j Configuration//EN" "log4j.dtd">
+
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+	<appender name="PRY" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="File" value="/javaapp/Portales/Empresas/logs/ConsultationIbsEnterpriceService.log" />
+		<param name="DatePattern" value="'.'yyyy-MM-dd" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="[%p] %d %c %M - %m%n" />
+		</layout>
+	</appender>
+
+
+	<appender name="CONSOLE" class="org.apache.log4j.ConsoleAppender">
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d %p %c{2} [%M] |%L| %m %n" />
+		</layout>
+	</appender>
+
+	
+	<logger name="ec.com.bancointernacional">
+		<level value="INFO" />
+		<appender-ref ref="CONSOLE" />
+		<appender-ref ref="PRY" />
+	</logger>
+
+	
+
+</log4j:configuration> 
